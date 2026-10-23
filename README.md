@@ -4,7 +4,7 @@ Collect text from several places (different files, different parts of a file) in
 
 ![Copy Append demo](images/demo.gif)
 
-<!-- TODO: replace images/demo.gif with a short screen recording (e.g. made with Kap or ScreenToGif). -->
+> The demo uses custom shortcuts (⇧⌘C / ⇧⌘V). The defaults are **⌃⌘C** / **⌃⌘V** on macOS and **Ctrl+Alt+C** / **Ctrl+Shift+Alt+V** on Windows and Linux. See [Keyboard shortcuts](#keyboard-shortcuts) to change them.
 
 ## Features
 
