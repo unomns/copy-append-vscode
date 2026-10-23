@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <!-- Placeholder icon: clipboard with a "+" badge. Replace with a final design. -->
+  <rect width="256" height="256" rx="48" fill="#FDE844"/>
+  <rect x="60" y="52" width="120" height="152" rx="14" fill="#fffaf0" stroke="#3b2f1e" stroke-width="10"/>
+  <rect x="90" y="38" width="60" height="30" rx="8" fill="#3b2f1e"/>
+  <rect x="82" y="96" width="76" height="10" rx="5" fill="#3b2f1e"/>
+  <rect x="82" y="122" width="60" height="10" rx="5" fill="#3b2f1e"/>
+  <rect x="82" y="148" width="68" height="10" rx="5" fill="#3b2f1e"/>
+  <circle cx="186" cy="186" r="40" fill="#3b2f1e"/>
+  <rect x="166" y="181" width="40" height="10" rx="5" fill="#FDE844"/>
+  <rect x="181" y="166" width="10" height="40" rx="5" fill="#FDE844"/>
+</svg>

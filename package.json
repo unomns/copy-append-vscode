@@ -1,0 +1,149 @@
+{
+  "name": "copy-append",
+  "displayName": "Copy Append",
+  "description": "Collect text from several places into the clipboard, then paste it all at once with a normal Ctrl+V / Cmd+V.",
+  "version": "0.1.0",
+  "publisher": "pineapple-head-lab",
+  "author": {
+    "name": "unomns",
+    "url": "https://github.com/unomns"
+  },
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unomns/copy-append-vscode.git"
+  },
+  "homepage": "https://github.com/unomns/copy-append-vscode#readme",
+  "bugs": {
+    "url": "https://github.com/unomns/copy-append-vscode/issues"
+  },
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#FDE844",
+    "theme": "light"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "clipboard",
+    "copy",
+    "paste",
+    "append",
+    "multi copy",
+    "collect",
+    "snippets",
+    "multi-cursor"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copyAppend.append",
+        "title": "Copy Append",
+        "icon": "$(clippy)"
+      },
+      {
+        "command": "copyAppend.clear",
+        "title": "Clear",
+        "category": "Copy Append",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "copyAppend.pasteAndClear",
+        "title": "Paste and Clear",
+        "category": "Copy Append"
+      },
+      {
+        "command": "copyAppend.showCollected",
+        "title": "Show Collected Text",
+        "category": "Copy Append"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "copyAppend.append",
+          "when": "editorIsOpen"
+        },
+        {
+          "command": "copyAppend.pasteAndClear",
+          "when": "editorIsOpen"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "copyAppend.append",
+        "key": "ctrl+alt+c",
+        "mac": "ctrl+cmd+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "copyAppend.clear",
+        "key": "ctrl+shift+alt+c",
+        "mac": "ctrl+shift+cmd+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "copyAppend.pasteAndClear",
+        "key": "ctrl+shift+alt+v",
+        "mac": "ctrl+cmd+v",
+        "when": "editorTextFocus && !editorReadonly"
+      }
+    ],
+    "configuration": {
+      "title": "Copy Append",
+      "properties": {
+        "copyAppend.separator": {
+          "type": "string",
+          "default": "\n",
+          "markdownDescription": "Text inserted between collected parts. In the Settings UI you can type `\\n` for a newline and `\\t` for a tab (e.g. `\\n\\n` for a blank line, or `\\n---\\n`)."
+        },
+        "copyAppend.addFileHeader": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Prefix each part with a comment line containing the file name and line range, e.g. `// src/app.ts:10-14`."
+        },
+        "copyAppend.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the number of collected parts in the status bar."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test:unit": "npm run compile && mocha --ui tdd \"out/test/unit/**/*.test.js\"",
+    "test": "vscode-test",
+    "package": "vsce package",
+    "publish:vsce": "vsce publish",
+    "publish:ovsx": "ovsx publish"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "@types/vscode": "~1.85.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "@vscode/vsce": "^4.0.0",
+    "eslint": "^10.5.0",
+    "mocha": "^11.7.5",
+    "ovsx": "^1.3.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  }
+}

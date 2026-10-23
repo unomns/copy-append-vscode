@@ -1,0 +1,14 @@
+.vscode/**
+.vscode-test/**
+src/**
+out/test/**
+.gitignore
+.yarnrc
+PUBLISHING.md
+images/*.svg
+images/demo.gif
+**/tsconfig.json
+**/eslint.config.mjs
+**/*.map
+**/*.ts
+**/.vscode-test.*
